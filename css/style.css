@@ -60,19 +60,18 @@ html, body {
   max-width: 600px;
 }
 
-.rules-list {
-  text-align: left;
-  list-style-type: none;
-  padding: 20px;
-  background: #444;
-  border-radius: 10px;
-  display: inline-block;
-  width: 100%;
-}
-
-.rules-list li {
+.rules-container {
+  background: #2a2a2a;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 1.6;
   font-size: 18px;
-  padding: 10px 0;
 }
 
 .test-buttons {
@@ -140,21 +139,24 @@ html, body {
 }
 
 .player-input-container {
+  position: relative;
   display: flex;
   align-items: center;
   background: #1a1a1a;
   padding: 5px;
   border-radius: 5px;
+  width: 100%;
 }
 
 .player-input {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   background: #333;
   color: white;
+  width: calc(100% - 30px);
 }
 
 .player-input:focus {
@@ -166,11 +168,18 @@ html, body {
   background: #ff5555;
   color: white;
   border: none;
-  font-size: 16px;
-  padding: 5px 10px;
+  font-size: 14px;
+  padding: 5px;
   cursor: pointer;
-  border-radius: 5px;
-  margin-left: 10px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  position: absolute;
+  right: 10px;
 }
 
 .remove-btn:hover {
