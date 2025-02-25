@@ -66,11 +66,14 @@ let currentQuestionIndex = 0;
 let answers = [];
 let drinkCount = 0;
 
-// Liste des joueurs
-const players = ["Joueur 1", "Joueur 2", "Joueur 3", "Joueur 4"]; // À modifier selon le nombre de joueurs
+// Récupérer la liste des joueurs stockée en localStorage
+const players = JSON.parse(localStorage.getItem("players")) || ["Joueur 1", "Joueur 2"];
 
 function getRandomPlayer() {
-  return players[Math.floor(Math.random() * players.length)];
+  if (players.length > 0) {
+    return players[Math.floor(Math.random() * players.length)];
+  }
+  return "Quelqu'un"; // Sécurité si la liste est vide
 }
 
 // Nettoyer les anciennes réponses avant de démarrer un nouveau test
