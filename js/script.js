@@ -112,7 +112,7 @@ function loadQuestion() {
   } else {
     localStorage.setItem("answers", JSON.stringify(answers));
     localStorage.setItem("drinkCount", drinkCount);
-    window.location.href = "https://axsxi.github.io/test-purete/html/result.html";
+    window.location.href = "/test-purete/html/result.html";
   }
 }
 
