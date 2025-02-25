@@ -116,3 +116,11 @@ html, body {
 .emoji {
   font-size: 22px;
 }
+
+.player-input {
+  display: block;
+  width: 80%;
+  margin: 5px auto;
+  padding: 8px;
+  font-size: 16px;
+}
