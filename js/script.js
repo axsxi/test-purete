@@ -67,7 +67,13 @@ let answers = [];
 let drinkCount = 0;
 
 // Récupérer la liste des joueurs stockée en localStorage
-const players = JSON.parse(localStorage.getItem("players")) || ["Joueur 1", "Joueur 2"];
+const players = JSON.parse(localStorage.getItem("players"));
+
+if (!players || players.length === 0) {
+  console.error("Aucun joueur trouvé, utilisation des valeurs par défaut.");
+} else {
+  console.log("Joueurs chargés :", players);
+}
 
 function getRandomPlayer() {
   if (players.length > 0) {
