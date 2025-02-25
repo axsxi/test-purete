@@ -1,3 +1,5 @@
+console.log("✅ script.js est bien chargé !");
+
 const questions = [
   // 🟠 Innocence générale (Mensonges, tricherie, vandalisme...)
   "As-tu déjà menti à un proche pour éviter des ennuis ?",
