@@ -22,15 +22,50 @@
         <li>Un joueur aléatoire peut être désigné pour boire à votre place ! 😈</li>
       </ul>
 
-      <div class="test-buttons">
-        <button class="btn classic" onclick="window.location.href='html/questions.html'">🎯 Commencer le test</button>
-      </div>
+      <div class="player-selection">
+        <h2>Ajoutez les joueurs</h2>
+        <div id="player-list">
+          <input type="text" class="player-input" placeholder="Entrez un prénom">
+        </div>
+        <button class="btn" onclick="addPlayerInput()">➕ Ajouter un joueur</button>
+        <button class="btn start-game" onclick="startGame()">🎲 Démarrer</button>
+      </div>      
     </div>
   </main>
 
   <footer class="footer">
     <p>© 2025 Test de Pureté - Tous droits réservés</p>
   </footer>
-  <script src="js/script.js"></script>
+
+  <script>
+    function addPlayerInput() {
+      const playerList = document.getElementById("player-list");
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "player-input";
+      input.placeholder = "Entrez un prénom";
+      playerList.appendChild(input);
+    }
+  
+    function startGame() {
+      const inputs = document.querySelectorAll(".player-input");
+      const players = [];
+  
+      inputs.forEach(input => {
+        if (input.value.trim() !== "") {
+          players.push(input.value.trim());
+        }
+      });
+  
+      if (players.length === 0) {
+        alert("Ajoutez au moins un joueur !");
+        return;
+      }
+  
+      localStorage.setItem("players", JSON.stringify(players)); // Sauvegarde les joueurs
+      window.location.href = "/test-purete/html/questions.html"; // Démarrer le jeu
+    }
+  </script>
+  
 </body>
 </html>
