@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  background: linear-gradient(90deg, #6200ea, #bb86fc); /* Dégradé violet */
+  padding: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase; /* Met en majuscules */
+  text-align: center;
+  letter-spacing: 2px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
+  border-bottom: 3px solid #bb86fc; /* Ajoute une bordure en bas */
+  position: relative;
+}
+
+/* Ajout d'un effet lumineux sur le texte */
+.header h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; /* Typographie plus moderne */
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 600px;
+}
+
+.rules-list {
+  text-align: left;
+  list-style-type: none;
+  padding: 20px;
+  background: #444;
+  border-radius: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.rules-list li {
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.test-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #bb86fc;
+  border: none;
+  padding: 15px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #6200ea;
+}
+
+.footer {
+  background-color: #121212;
+  padding: 15px;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+.footer a {
+  color: #bb86fc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.emoji {
+  font-size: 22px;
+}

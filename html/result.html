@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Résultat - Test de Pureté</title>
+  <link rel="icon" href="/images/banniere.jpg" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: linear-gradient(90deg, #6200ea, #bb86fc); /* Dégradé violet */
+      padding: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      text-transform: uppercase; /* Met en majuscules */
+      text-align: center;
+      letter-spacing: 2px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
+      border-bottom: 3px solid #bb86fc; /* Ajoute une bordure en bas */
+      position: relative;
+    }
+
+    .header h1 {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif; /* Typographie plus moderne */
+      text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+
+    .btn {
+      background-color: #6200ea;
+      color: white;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      margin: 10px;
+    }
+    .btn:hover {
+      background-color: #3700b3;
+    }
+    .result-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .result-item {
+      background: #333;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      text-align: left;
+    }
+    .progress-bar {
+      width: 100%;
+      background: #222;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+    .progress {
+      height: 10px;
+      background: #bb86fc;
+      border-radius: 5px;
+    }
+
+    .footer {
+      background-color: #121212;
+      padding: 15px;
+      font-size: 14px;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+    }
+
+    .footer a {
+      color: #bb86fc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script defer src="/js/result.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Test de Pureté - Version Jeu à Boire 🍻</h1>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h1>Votre Score de Pureté</h1>
+      <div id="result-container"></div>
+    
+      <div class="result-buttons">
+        <button class="btn" onclick="window.location.href='/html/questions.html'">🔄 Recommencer</button>
+        <button class="btn" onclick="window.location.href='/'">🏠 Retour à l'accueil</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Test de Pureté - Tous droits réservés</p>
+    <p><a href="#">Mentions légales</a> | <a href="#">Contact</a></p>
+  </footer>
+
+</body>
+</html>
