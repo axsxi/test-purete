@@ -80,6 +80,10 @@ localStorage.removeItem("drinkCount");
 // Fonction pour charger la question actuelle
 function loadQuestion() {
   const container = document.getElementById("questions-container");
+  if (!container) {
+      console.error("Erreur : #questions-container introuvable !");
+      return;
+  }
   container.innerHTML = "";
 
   if (currentQuestionIndex < questions.length) {
