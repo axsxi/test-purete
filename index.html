@@ -44,23 +44,31 @@
     function addPlayerInput() {
       const playerList = document.getElementById("player-list");
       
+      // Création du conteneur pour le champ et le bouton de suppression
       const container = document.createElement("div");
       container.className = "player-input-container";
   
+      // Création du champ input
       const input = document.createElement("input");
       input.type = "text";
       input.className = "player-input";
       input.placeholder = "Entrez un prénom";
   
+      // Création du bouton de suppression
       const removeBtn = document.createElement("button");
       removeBtn.className = "remove-btn";
       removeBtn.innerHTML = "✖";
-      removeBtn.onclick = function() {
-        container.remove();
-      };
+      
+      // Ajout de l'événement pour supprimer l'élément parent
+      removeBtn.addEventListener("click", function() {
+        playerList.removeChild(container);
+      });
   
+      // Ajouter l'input et le bouton dans le conteneur
       container.appendChild(input);
       container.appendChild(removeBtn);
+  
+      // Ajouter le conteneur dans la liste des joueurs
       playerList.appendChild(container);
     }
   
@@ -82,6 +90,6 @@
       localStorage.setItem("players", JSON.stringify(players)); // Sauvegarde en localStorage
       window.location.href = "/test-purete/html/questions.html"; // Démarrer le jeu
     }
-  </script>  
+  </script>   
 </body>
 </html>
