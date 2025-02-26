@@ -111,10 +111,6 @@ function loadQuestion() {
     noButton.textContent = "Non";
     noButton.onclick = () => answerQuestion("no");
 
-    // Réinitialisation des boutons avant chaque question
-    yesButton.style.backgroundColor = "white";
-    noButton.style.backgroundColor = "white";
-
     buttonContainer.appendChild(yesButton);
     buttonContainer.appendChild(noButton);
 
