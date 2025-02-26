@@ -150,13 +150,13 @@ html, body {
 
 .player-input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   background: #333;
   color: white;
-  width: calc(100% - 30px);
+  width: 100%;
 }
 
 .player-input:focus {
@@ -168,12 +168,12 @@ html, body {
   background: #ff5555;
   color: white;
   border: none;
-  font-size: 14px;
-  padding: 5px;
+  font-size: 16px;
+  padding: 8px;
   cursor: pointer;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,17 +247,18 @@ input {
   }
 
   .player-input-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
   }
 
   .player-input {
-    width: 100%;
+    width: calc(100% - 40px);
   }
 
   .remove-btn {
-    position: static;
-    margin-top: 5px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
   }
 }
 
