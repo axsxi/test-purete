@@ -5,7 +5,7 @@ const questions = [
   "As-tu déjà volé quelque chose (même une petite chose) ?",
   "As-tu déjà été collé(e) ou puni(e) à l’école ?",
   "As-tu déjà vandalisé un bien public ou privé ?",
-  "As-tu déjà insulté un professeur ou une figure d’autorité ?",
+  "As-tu déjà affronté un professeur ou une figure d’autorité en l’insultant directement ?",
   "As-tu déjà été impliqué(e) dans une bagarre ?",
   "As-tu déjà fait semblant d’être malade pour éviter quelque chose ?",
   "As-tu déjà piraté un compte ou utilisé un mot de passe qui ne t’appartenait pas ?",
