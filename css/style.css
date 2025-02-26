@@ -261,29 +261,3 @@ input {
     font-size: 14px;
   }
 }
-
-/* Pour les écrans encore plus petits */
-@media (max-width: 480px) {
-  .header {
-    font-size: 18px;
-    padding: 10px;
-  }
-
-  .header h1 {
-    font-size: 16px;
-  }
-
-  .rules-container {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .btn {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .container {
-    padding: 10px;
-  }
-}
