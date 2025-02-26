@@ -74,3 +74,29 @@ function getScoreMessage(score) {
     if (score <= 200) return "Tu as bien vécu, et ça se voit ! 😈";
     return "Une LÉGENDE de la débauche. 🔥";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const drinkCount = localStorage.getItem("drinkCount") || 0;
+
+    let verres = Math.floor(drinkCount / 10); // 1 verre tous les 10 "Oui"
+    let shots = Math.floor(drinkCount / 25); // 1 shot tous les 25 "Oui"
+    let gorgéesRestantes = drinkCount % 10; // Gorgées qui ne forment pas un verre complet
+
+    let drinkMessage = `<h2>Pénalité : ${drinkCount} gorgées à boire 🍻</h2>`;
+
+    if (verres > 0) {
+        drinkMessage += `<p>💥 Tu dois boire ${verres} verre(s) entier(s) ! 🍷</p>`;
+    }
+
+    if (shots > 0) {
+        drinkMessage += `<p>🔥 En plus, ${shots} shot(s) pour fêter ça ! 🥃</p>`;
+    }
+
+    // On affiche seulement les gorgées restantes si elles sont pertinentes
+    if (gorgéesRestantes > 0 && verres === 0) {
+        drinkMessage += `<p>Tu dois boire ${gorgéesRestantes} gorgée(s)... courage ! 😈</p>`;
+    }
+
+    const resultContainer = document.getElementById("result-container");
+    resultContainer.innerHTML += drinkMessage;
+});
