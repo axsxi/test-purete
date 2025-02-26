@@ -23,17 +23,19 @@
         <p>Un joueur aléatoire peut être désigné pour boire à votre place ! 😈</p>
       </div>
       
-      <div class="player-selection">
-        <h2>Ajoutez les joueurs</h2>
-        <div id="player-list">
-          <div class="player-input-container">
-            <input type="text" class="player-input" placeholder="Entrez un prénom">
-            <button class="remove-btn" onclick="removePlayerInput(this)">✖</button>
-          </div>
+      <div id="player-list">
+        <div class="player-input-container">
+          <input type="text" class="player-input" placeholder="Entrez un prénom">
+          <button class="remove-btn" onclick="removePlayerInput(this)">✖</button>
         </div>
-        <button class="btn add-btn" onclick="addPlayerInput()">➕ Ajouter un joueur</button>
-        <button class="btn start-game" onclick="startGame()">🎲 Démarrer</button>
-      </div> 
+      </div>
+      
+      <!-- Message d'erreur -->
+      <div id="error-message" class="error-message"></div>
+      
+      <!-- Boutons -->
+      <button class="btn add-btn" onclick="addPlayerInput()">➕ Ajouter un joueur</button>
+      <button class="btn start-game" onclick="startGame()">🎲 Démarrer</button>      
     </div>
   </main>
 
@@ -76,21 +78,26 @@
     function startGame() {
       const inputs = document.querySelectorAll(".player-input");
       const players = [];
-  
+      const errorMessage = document.getElementById("error-message");
+
       inputs.forEach(input => {
         if (input.value.trim() !== "") {
           players.push(input.value.trim());
         }
       });
-  
+
       if (players.length === 0) {
-        alert("Ajoutez au moins un joueur !");
+        errorMessage.textContent = "Ajoutez au moins un joueur !";
+        errorMessage.style.display = "block"; // Affiche le message d'erreur
         return;
       }
-  
-      localStorage.setItem("players", JSON.stringify(players)); // Sauvegarde en localStorage
-      window.location.href = "/test-purete/html/questions.html"; // Démarrer le jeu
-    }
+
+      errorMessage.style.display = "none"; // Cache le message si la condition est remplie
+
+      localStorage.setItem("players", JSON.stringify(players));
+      window.location.href = "/test-purete/html/questions.html";
+}
+
   </script>   
 </body>
 </html>
