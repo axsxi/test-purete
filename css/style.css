@@ -212,6 +212,10 @@ html, body {
   font-weight: bold;
 }
 
+input {
+  touch-action: manipulation;
+}
+
 /* --- Responsive Adjustments --- */
 
 /* Mobile First */
