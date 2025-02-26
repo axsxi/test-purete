@@ -102,12 +102,12 @@ function loadQuestion() {
     buttonContainer.classList.add("button-container");
 
     const yesButton = document.createElement("button");
-    yesButton.classList.add("btn");
+    yesButton.classList.add("btn-yes");
     yesButton.textContent = "Oui";
     yesButton.onclick = () => answerQuestion("yes");
 
     const noButton = document.createElement("button");
-    noButton.classList.add("btn");
+    noButton.classList.add("btn-no");
     noButton.textContent = "Non";
     noButton.onclick = () => answerQuestion("no");
 

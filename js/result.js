@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { 
     const themeSizes = [10, 10, 10, 10, 5, 5]; // Nombre de questions par thème (50 au total)
     const themeNames = [
         "Innocence générale",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     themeSizes.forEach((size, index) => {
         let yesCount = answers.slice(startIndex, startIndex + size).filter(answer => answer === "yes").length;
-        let score = Math.round(((size - yesCount) / size) * 100);
+        let score = Math.round((yesCount / size) * 100); // Plus le score est élevé, plus l'impureté est grande
         scores.push(score);
         startIndex += size;
     });
@@ -41,52 +41,36 @@ document.addEventListener("DOMContentLoaded", () => {
         resultContainer.innerHTML += `
             <div class="result-item">
                 <h3>${themeNames[index]}</h3>
-                <p>Score : <strong>${score}%</strong></p>
+                <p>Score d'impureté : <strong>${score}%</strong></p>
                 <div class="progress-bar">
-                    <div class="progress" style="width: ${score}%;"></div>
+                    <div class="progress" style="width: ${score}%; background-color: ${getProgressColor(score)};"></div>
                 </div>
             </div>
         `;
     });
 
-    let globalScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+    let globalScore = scores.reduce((a, b) => a + b, 0) - 250; // Score global en points (peut être négatif)
+
     resultContainer.innerHTML += `
-        <h2>Score de pureté global : <strong>${globalScore}%</strong></h2>
+        <h2>Score de pureté global : <strong>${globalScore} points</strong></h2>
         <p>${getScoreMessage(globalScore)}</p>
     `;
 });
 
-// Fonction qui affiche un message en fonction du score global
-function getScoreMessage(score) {
-    if (score === 100) return "Tu es un ange pur ! 😇";
-    if (score >= 80) return "Plutôt sage, mais pas totalement innocent(e) ! 😉";
-    if (score >= 50) return "Un(e) aventurier(e) modéré(e)... 😏";
-    if (score >= 30) return "Tu as bien vécu, et ça se voit ! 😈";
-    return "Une LÉGENDE de la débauche. 🔥";
+// Fonction qui change la couleur de la barre de progression
+function getProgressColor(score) {
+    if (score <= 10) return "#00ff00"; // Vert (très pur)
+    if (score <= 30) return "#a0ff00"; // Jaune-vert
+    if (score <= 50) return "#ffff00"; // Jaune
+    if (score <= 70) return "#ff8000"; // Orange
+    return "#ff0000"; // Rouge (très impur)
 }
 
-document.addEventListener("DOMContentLoaded", () => { 
-    const drinkCount = localStorage.getItem("drinkCount") || 0;
-    
-    let verres = Math.floor(drinkCount / 10); // 1 verre tous les 10 "Oui"
-    let shots = Math.floor(drinkCount / 25); // 1 shot tous les 25 "Oui"
-    let gorgéesRestantes = drinkCount % 10; // Gorgées qui ne forment pas un verre complet
-
-    let drinkMessage = `<h2>Pénalité : ${drinkCount} gorgées à boire 🍻</h2>`;
-
-    if (verres > 0) {
-        drinkMessage += `<p>💥 Tu dois boire ${verres} verre(s) entier(s) ! 🍷</p>`;
-    }
-
-    if (shots > 0) {
-        drinkMessage += `<p>🔥 En plus, ${shots} shot(s) pour fêter ça ! 🥃</p>`;
-    }
-
-    // On affiche seulement les gorgées restantes si elles sont pertinentes
-    if (gorgéesRestantes > 0 && verres === 0) {
-        drinkMessage += `<p>Tu dois boire ${gorgéesRestantes} gorgée(s)... courage ! 😈</p>`;
-    }
-
-    const resultContainer = document.getElementById("result-container");
-    resultContainer.innerHTML += drinkMessage;
-});
+// Fonction qui affiche un message en fonction du score global
+function getScoreMessage(score) {
+    if (score <= -100) return "Tu es un ange pur ! 😇";
+    if (score <= 0) return "Plutôt sage, mais pas totalement innocent(e) ! 😉";
+    if (score <= 100) return "Un(e) aventurier(e) modéré(e)... 😏";
+    if (score <= 200) return "Tu as bien vécu, et ça se voit ! 😈";
+    return "Une LÉGENDE de la débauche. 🔥";
+}
