@@ -202,3 +202,74 @@ html, body {
 .btn:hover {
   background: #3700b3;
 }
+
+/* --- Responsive Adjustments --- */
+
+/* Mobile First */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .header {
+    font-size: 22px;
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .rules-container {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 10px;
+    width: auto;
+  }
+
+  .player-input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .player-input {
+    width: 100%;
+  }
+
+  .remove-btn {
+    position: static;
+    margin-top: 5px;
+  }
+}
+
+/* Pour les écrans encore plus petits */
+@media (max-width: 480px) {
+  .header {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+
+  .rules-container {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
