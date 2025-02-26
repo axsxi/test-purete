@@ -89,7 +89,7 @@ localStorage.removeItem("drinkCount");
 // Fonction pour charger la question actuelle
 function loadQuestion() {
   const container = document.getElementById("questions-container");
-  container.innerHTML = "";
+  container.innerHTML = ""; // Efface l'ancienne question
 
   if (currentQuestionIndex < questions.length) {
     const questionDiv = document.createElement("div");
@@ -110,6 +110,10 @@ function loadQuestion() {
     noButton.classList.add("btn");
     noButton.textContent = "Non";
     noButton.onclick = () => answerQuestion("no");
+
+    // Réinitialisation des boutons avant chaque question
+    yesButton.style.backgroundColor = "white";
+    noButton.style.backgroundColor = "white";
 
     buttonContainer.appendChild(yesButton);
     buttonContainer.appendChild(noButton);
