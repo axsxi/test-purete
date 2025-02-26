@@ -42,7 +42,7 @@ const questions = [
   "As-tu déjà regretté une expérience sexuelle ?",
   "As-tu déjà été surpris(e) en pleine action ?",
   "As-tu déjà eu une relation avec quelqu’un rencontré via une application de rencontre ?",
-  "As-tu déjà menti sur ton expérience sexuelle pour impressionner ?",
+  "As-tu déjà eu une expérience intime avec une personne du même sexe ?",
   "As-tu déjà eu une relation avec une personne en couple ?",
   "As-tu déjà eu une attirance pour un(e) ami(e) proche ?",
   "As-tu déjà pratiqué le sexe au téléphone ou en ligne ?",
