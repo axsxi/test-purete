@@ -25,22 +25,22 @@
     }
 
     .header {
-      background: linear-gradient(90deg, #6200ea, #bb86fc); /* Dégradé violet */
+      background: linear-gradient(90deg, #6200ea, #bb86fc);
       padding: 20px;
       font-size: 26px;
       font-weight: bold;
-      text-transform: uppercase; /* Met en majuscules */
+      text-transform: uppercase;
       text-align: center;
       letter-spacing: 2px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Ajoute une ombre */
-      border-bottom: 3px solid #bb86fc; /* Ajoute une bordure en bas */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      border-bottom: 3px solid #bb86fc;
       position: relative;
     }
 
     .header h1 {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif; /* Typographie plus moderne */
+      font-family: 'Poppins', sans-serif;
       text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
       color: white;
     }
@@ -64,7 +64,7 @@
     }
 
     .btn-yes {
-      background-color: #00c853; /* Vert */
+      background-color: #00c853;
       color: white;
       padding: 14px 22px;
       font-size: 20px;
@@ -78,11 +78,11 @@
     }
 
     .btn-yes:hover {
-      background-color: #009624; /* Vert foncé */
+      background-color: #009624;
     }
 
     .btn-no {
-      background-color: #d50000; /* Rouge */
+      background-color: #d50000;
       color: white;
       padding: 14px 22px;
       font-size: 20px;
@@ -96,24 +96,23 @@
     }
 
     .btn-no:hover {
-      background-color: #9b0000; /* Rouge foncé */
+      background-color: #9b0000;
     }
 
-    /* Pop-up pour annoncer qui doit boire */
     .popup {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.9); /* Opacité plus visible */
+      background-color: rgba(0, 0, 0, 0.9);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
       text-align: center;
       color: white;
-      z-index: 9999; /* S'assurer que c'est au-dessus de tout */
+      z-index: 9999;
       width: 300px;
-      display: none; /* Caché par défaut */
+      display: none;
     }
 
     .popup-content {
@@ -155,9 +154,6 @@
       text-decoration: underline;
     }
 
-    /* --- Responsive Adjustments for questions.html --- */
-
-    /* Mobile First */
     @media (max-width: 768px) {
       .container {
         width: 90%;
@@ -227,7 +223,7 @@
   
       if (popup && popupMessage) {
         popupMessage.innerText = message;
-        popup.classList.remove("hidden"); // Rendre visible
+        popup.classList.remove("hidden");
       } else {
         console.error("Erreur : le pop-up n'a pas été trouvé.");
       }
@@ -239,7 +235,7 @@
       const popup = document.getElementById("popup");
 
       if (popup) {
-        popup.style.display = "none"; // Cacher le pop-up
+        popup.style.display = "none";
         console.log("Le pop-up a été caché.");
 
         currentQuestionIndex++;

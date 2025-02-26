@@ -88,11 +88,11 @@
 
       if (players.length === 0) {
         errorMessage.textContent = "Ajoutez au moins un joueur !";
-        errorMessage.style.display = "block"; // Affiche le message d'erreur
+        errorMessage.style.display = "block";
         return;
       }
 
-      errorMessage.style.display = "none"; // Cache le message si la condition est remplie
+      errorMessage.style.display = "none";
 
       localStorage.setItem("players", JSON.stringify(players));
       window.location.href = "/test-purete/html/questions.html";

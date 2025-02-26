@@ -1,5 +1,5 @@
 const questions = [
-  // 🟠 Innocence générale (Mensonges, tricherie, vandalisme...)
+  // Innocence générale (Mensonges, tricherie, vandalisme...)
   "As-tu déjà menti à un proche pour éviter des ennuis ?",
   "As-tu déjà triché à un examen ou un contrôle ?",
   "As-tu déjà volé quelque chose (même une petite chose) ?",
@@ -11,7 +11,7 @@ const questions = [
   "As-tu déjà piraté un compte ou utilisé un mot de passe qui ne t’appartenait pas ?",
   "As-tu déjà falsifié une signature ou un document officiel ?",
 
-  // 🟡 Expériences sociales (Relations, amitiés, disputes...)
+  // Expériences sociales (Relations, amitiés, disputes...)
   "As-tu déjà ghosté un(e) ami(e) sans explication ?",
   "As-tu déjà coupé contact avec un(e) ami(e) de longue date ?",
   "As-tu déjà manipulé quelqu’un pour obtenir ce que tu voulais ?",
@@ -23,7 +23,7 @@ const questions = [
   "As-tu déjà profité de quelqu’un pour un avantage personnel ?",
   "As-tu déjà coupé les ponts avec quelqu’un du jour au lendemain ?",
 
-  // 🩷 Amour & Romance (Premier baiser, relation sérieuse...)
+  // Amour & Romance (Premier baiser, relation sérieuse...)
   "As-tu déjà été dans une relation toxique ?",
   "As-tu déjà séduit quelqu’un par pur défi ?",
   "As-tu déjà entretenu une double relation en même temps ?",
@@ -35,7 +35,7 @@ const questions = [
   "As-tu déjà manipulé quelqu’un émotionnellement dans une relation ?",
   "As-tu déjà pleuré après une rupture ?",
 
-  // ❤️ Expériences sexuelles (Flirts, relations, expériences variées...)
+  // Expériences sexuelles (Flirts, relations, expériences variées...)
   "As-tu déjà eu un rapport sexuel dans un endroit insolite ?",
   "As-tu déjà eu une aventure d’un soir sans jamais revoir la personne ?",
   "As-tu déjà été tenté(e) par un plan à trois ou plus ?",
@@ -47,14 +47,14 @@ const questions = [
   "As-tu déjà eu une attirance pour un(e) ami(e) proche ?",
   "As-tu déjà pratiqué le sexe au téléphone ou en ligne ?",
 
-  // 🍷 Drogues & Alcool (Alcool, tabac, substances...)
+  // Drogues & Alcool (Alcool, tabac, substances...)
   "As-tu déjà bu de l’alcool au point de ne plus te souvenir de ta soirée ?",
   "As-tu déjà testé une drogue illégale ?",
   "As-tu déjà conduit en ayant bu de l’alcool ?",
   "As-tu déjà été malade à cause d’un excès d’alcool ?",
   "As-tu déjà été sous l’emprise de l’alcool ou de drogue en public ?",
 
-  // ⚖️ Légalité & Illégalité (Vols, fraude, délits...)
+  // Légalité & Illégalité (Vols, fraude, délits...)
   "As-tu déjà volé quelque chose de plus de 50€ ?",
   "As-tu déjà été arrêté(e) par la police, même brièvement ?",
   "As-tu déjà participé à un délit mineur (fraude, intrusion, etc.) ?",
@@ -79,7 +79,7 @@ function getRandomPlayer() {
   if (players.length > 0) {
     return players[Math.floor(Math.random() * players.length)];
   }
-  return "Quelqu'un"; // Sécurité si la liste est vide
+  return "Quelqu'un";
 }
 
 // Nettoyer les anciennes réponses avant de démarrer un nouveau test
@@ -89,7 +89,7 @@ localStorage.removeItem("drinkCount");
 // Fonction pour charger la question actuelle
 function loadQuestion() {
   const container = document.getElementById("questions-container");
-  container.innerHTML = ""; // Efface l'ancienne question
+  container.innerHTML = "";
 
   if (currentQuestionIndex < questions.length) {
     const questionDiv = document.createElement("div");
@@ -143,7 +143,7 @@ function answerQuestion(answer) {
     if (popup && popupMessage) {
       console.log("Le pop-up a été trouvé, affichage en cours...");
       popupMessage.innerText = `${selectedPlayer} doit boire une gorgée ! 🍻`;
-      popup.style.display = "flex";  // Mettre en display:flex au lieu de block
+      popup.style.display = "flex";
       popup.style.justifyContent = "center"; 
       popup.style.alignItems = "center"; 
     } else {

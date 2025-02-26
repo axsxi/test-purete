@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => { 
-    const themeSizes = [10, 10, 10, 10, 5, 5]; // Nombre de questions par thème (50 au total)
+    const themeSizes = [10, 10, 10, 10, 5, 5];
     const themeNames = [
         "Innocence générale",
         "Expériences sociales",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     themeSizes.forEach((size, index) => {
         let yesCount = answers.slice(startIndex, startIndex + size).filter(answer => answer === "yes").length;
-        let score = Math.round((yesCount / size) * 100); // Plus le score est élevé, plus l'impureté est grande
+        let score = Math.round((yesCount / size) * 100);
         scores.push(score);
         startIndex += size;
     });
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     });
 
-    let globalScore = scores.reduce((a, b) => a + b, 0) - 250; // Score global en points (peut être négatif)
+    let globalScore = scores.reduce((a, b) => a + b, 0) - 250;
 
     resultContainer.innerHTML += `
         <h2>Score de pureté global : <strong>${globalScore} points</strong></h2>
@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fonction qui change la couleur de la barre de progression
 function getProgressColor(score) {
-    if (score <= 10) return "#00ff00"; // Vert (très pur)
-    if (score <= 30) return "#a0ff00"; // Jaune-vert
-    if (score <= 50) return "#ffff00"; // Jaune
-    if (score <= 70) return "#ff8000"; // Orange
-    return "#ff0000"; // Rouge (très impur)
+    if (score <= 10) return "#00ff00";
+    if (score <= 30) return "#a0ff00";
+    if (score <= 50) return "#ffff00";
+    if (score <= 70) return "#ff8000";
+    return "#ff0000";
 }
 
 // Fonction qui affiche un message en fonction du score global
@@ -78,9 +78,9 @@ function getScoreMessage(score) {
 document.addEventListener("DOMContentLoaded", () => {
     const drinkCount = localStorage.getItem("drinkCount") || 0;
 
-    let verres = Math.floor(drinkCount / 10); // 1 verre tous les 10 "Oui"
-    let shots = Math.floor(drinkCount / 25); // 1 shot tous les 25 "Oui"
-    let gorgéesRestantes = drinkCount % 10; // Gorgées qui ne forment pas un verre complet
+    let verres = Math.floor(drinkCount / 10);
+    let shots = Math.floor(drinkCount / 25);
+    let gorgéesRestantes = drinkCount % 10;
 
     let drinkMessage = `<h2>Pénalité : ${drinkCount} gorgées à boire 🍻</h2>`;
 
